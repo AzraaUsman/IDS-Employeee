@@ -1,0 +1,20 @@
+<div class="container mt-5 ids-contaner-employee">
+  
+  <div class="ids-titles-emp">
+    <div> 
+      <img  class="ids-logo" src="https://idsnext.com/wp-content/uploads/2021/11/PrimaryLogo-TriColour.png" alt="IDS-NEXT">
+    </div>
+    <br>
+    <div class="ids-sub-title">
+      <h5 class="font-weight-bold">Angular - Crud Operation</h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <Add-Employee></Add-Employee>
+    </div>
+    <div class="col-md-6">
+      <app-view-employee (EditEmployee)="getEmployee($event)"></app-view-employee>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="card border-primary shadow-lg card-ids-from">
+        <div class="card-body">
+          <form [formGroup]="form" (submit)="onSubmit()">
+            <div class="form-group ids-emp-inp-form-group">
+              <label class=" ids-emp-inp-label" for="field1">Name</label>
+              <input type="text" class="form-control ids-emp-inp-laform-control" id="field1" formControlName="Name" placeholder="Eg :- John Doe"
+                [ngClass]="{ 'ids-error-input': form?.get('Name')?.touched && form?.get('Name')?.errors?.['required'] }">
+              
+              <!-- <small class="ids-error-input" *ngIf="form?.get('Name')?.touched && form?.get('Name')?.errors?.['required']">
+                Name is required.
+              </small> -->
+            </div>
+            <div class="form-group ids-emp-inp-form-group">
+              <label class=" ids-emp-inp-label" for="field2">Designation</label>
+              <input type="text" class="form-control ids-emp-inp-laform-control" id="field2" formControlName="Designation" placeholder="Eg :- Manager"
+              [ngClass]="{ 'ids-error-input': form?.get('Designation')?.touched && form?.get('Designation')?.errors?.['required'] }">
+
+              <!-- <small class="ids-error-input" *ngIf="form?.get('Designation')?.touched && form?.get('Designation')?.errors?.['pattern']">
+                Designation should only contain alphabets.
+              </small>
+
+              <small class="ids-error-input" *ngIf="form?.get('Designation')?.touched && form?.get('Designation')?.errors?.['required']">
+                Designation is required.
+              </small> -->
+            </div>
+            <div class="form-group ids-emp-inp-form-group">
+              <label class=" ids-emp-inp-label" for="field3">Salary</label>
+              <input type="text" class="form-control ids-emp-inp-laform-control" id="field3" formControlName="Salary" placeholder="Eg :- 100000"
+              [ngClass]="{ 'ids-error-input': form?.get('Salary')?.touched && form?.get('Salary')?.errors?.['required'] }">
+
+              <!-- <small class="ids-error-input" *ngIf="form?.get('Salary')?.touched && form?.get('Salary')?.errors?.['required']">
+                Salary is required.
+              </small> -->
+            </div>
+            <button *ngIf="EditMode" (click)="update()" class="btn btn-primary float-right ids-Save-Button">Update</button>
+            <button *ngIf="!EditMode"  (click)="save()" class="btn btn-primary float-right ids-Save-Button">Save</button>
+            <button (click)="reset()"class="btn btn-primary float-right ids-Reset-Button">Reset</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
